@@ -2,7 +2,7 @@
 layout: single
 title: "std::allocator"
 categories: C++
-tag: [C++, STL]
+tag: [C++, STL, allocator]
 toc: true
 author_profile: false
 # sidebar:
@@ -142,9 +142,9 @@ a.out(5737,0x106b45600) malloc: *** set a breakpoint in malloc_error_break to de
 n의 경우 allocate의 n과 동일한 값을 넣어줘야 하는데, 0을 넣어도 문제없이 작동하는(?)부분이 있습니다.
 ~~`C`의 `free()`와 비슷한???~~ 확인이 필요할 것으로 보입니다.
   
-42서울 smun님의 답변  
->Allocator의 API명세는 n을 요구하지만, std::allocator는 필요하지 않음
-명세는 맞춰야 하기 때문에 n을 받도록 처리함
+42서울 smun님의 답변에 대한 해석  
+>c++ 표준 라이브러리의 명명요구사항에 size_t n을 받도록 작성 되어 있기 때문에 std::allocator도 size_t n을 받도록 되어 있음
+size_t n을 받으면 이후 리포트나 디버깅 등으로 사용할 수 있음
 
 ```c++
 #include <iostream>
